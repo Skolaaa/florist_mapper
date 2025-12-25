@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Wildwood Botanics",
+    "lat": 51.5074,
+    "lng": -0.1278,
+    "rating": 4.9,
+    "price_tier": "$$",
+    "image": "https://images.unsplash.com/photo-1591073113125-e46713c829ed",
+    "top_sellers": [
+      {"name": "Meadow Mix", "price": 35},
+      {"name": "Eucalyptus Bundle", "price": 15},
+      {"name": "Signature Rose", "price": 45}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "The Petal Studio",
+    "lat": 51.5150,
+    "lng": -0.0900,
+    "rating": 4.7,
+    "price_tier": "$$$",
+    "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364",
+    "top_sellers": [
+      {"name": "Peony Luxe", "price": 65},
+      {"name": "Orchid Pot", "price": 40},
+      {"name": "White Lilies", "price": 50}
+    ]
+  }
+]
