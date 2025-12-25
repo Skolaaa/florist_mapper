@@ -7,6 +7,8 @@
     "rating": 4.9,
     "price_tier": "$$",
     "image": "https://images.unsplash.com/photo-1591073113125-e46713c829ed",
+    "services": ["Delivery", "Pickup"],
+    "categories": ["Modern", "Bouquets", "Wedding"],
     "top_sellers": [
       {"name": "Meadow Mix", "price": 35},
       {"name": "Eucalyptus Bundle", "price": 15},
@@ -21,10 +23,76 @@
     "rating": 4.7,
     "price_tier": "$$$",
     "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364",
+    "services": ["Delivery"],
+    "categories": ["Luxury", "Events", "Bouquets"],
     "top_sellers": [
       {"name": "Peony Luxe", "price": 65},
       {"name": "Orchid Pot", "price": 40},
       {"name": "White Lilies", "price": 50}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Blooms & Brews",
+    "lat": 51.5200,
+    "lng": -0.1100,
+    "rating": 4.5,
+    "price_tier": "$",
+    "image": "https://images.unsplash.com/photo-1582794543139-8ac92a944221",
+    "services": ["Pickup"],
+    "categories": ["Casual", "Plants", "Dried"],
+    "top_sellers": [
+      {"name": "Daily Posy", "price": 25},
+      {"name": "Cactus Trio", "price": 18},
+      {"name": "Dried Wreath", "price": 30}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Rose & Rye",
+    "lat": 51.4900,
+    "lng": -0.1400,
+    "rating": 4.8,
+    "price_tier": "$$",
+    "image": "https://images.unsplash.com/photo-1494336934272-f0efcedfc71a",
+    "services": ["Delivery", "Pickup"],
+    "categories": ["Classic", "Roses", "Gifts"],
+    "top_sellers": [
+      {"name": "Dozen Red", "price": 55},
+      {"name": "Tulip Wrap", "price": 30},
+      {"name": "Gift Box", "price": 45}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Urban Jungle",
+    "lat": 51.5300,
+    "lng": -0.0800,
+    "rating": 4.6,
+    "price_tier": "$$",
+    "image": "https://images.unsplash.com/photo-1459156212016-c812468e2115",
+    "services": ["Delivery"],
+    "categories": ["Plants", "Modern", "Terrariums"],
+    "top_sellers": [
+      {"name": "Monstera", "price": 40},
+      {"name": "Fiddle Leaf", "price": 60},
+      {"name": "Succulent Bowl", "price": 35}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Grace & Garden",
+    "lat": 51.5000,
+    "lng": -0.1800,
+    "rating": 5.0,
+    "price_tier": "$$$",
+    "image": "https://images.unsplash.com/photo-1563241527-3af801d063ce",
+    "services": ["Delivery", "Pickup"],
+    "categories": ["Luxury", "Wedding", "Events"],
+    "top_sellers": [
+      {"name": "Grand Arch", "price": 150},
+      {"name": "Bridal Bouquet", "price": 95},
+      {"name": "Table Center", "price": 80}
     ]
   }
 ]

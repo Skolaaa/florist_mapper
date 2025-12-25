@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { calculateDistance, geocodeLocation } from "@/lib/utils";
 import floristsData from "@/data/florists.json";
 import { Search, Map as MapIcon, List } from "lucide-react";
+import { Filters, FilterState } from "@/components/discovery/filters";
 
 // Default center (London) if no location
 const DEFAULT_CENTER: [number, number] = [51.505, -0.09];
@@ -21,10 +22,38 @@ function DiscoveryPageContent() {
   const [userLocation, setUserLocation] = useState<[number, number] | null>(null);
   const [mapCenter, setMapCenter] = useState<[number, number]>(DEFAULT_CENTER);
   const [zoom, setZoom] = useState(13);
-  const [sortedFlorists, setSortedFlorists] = useState<Florist[]>(floristsData as Florist[]);
+
+  // State for all florists with calculated distance (if any)
+  const [allFlorists, setAllFlorists] = useState<Florist[]>(floristsData as Florist[]);
+
+  // State for active filters
+  const [filters, setFilters] = useState<FilterState>({
+    price: [],
+    services: [],
+    categories: []
+  });
+
   const [showMapMobile, setShowMapMobile] = useState(false);
 
-  // Initialize from search param
+  // Derived state: filtered florists
+  const filteredFlorists = allFlorists.filter((florist) => {
+    // Price Filter
+    if (filters.price.length > 0 && !filters.price.includes(florist.price_tier)) {
+      return false;
+    }
+    // Services Filter
+    if (filters.services.length > 0) {
+      const hasService = filters.services.some(s => florist.services?.includes(s));
+      if (!hasService) return false;
+    }
+    // Categories Filter
+    if (filters.categories.length > 0) {
+      const hasCategory = filters.categories.some(c => florist.categories?.includes(c));
+      if (!hasCategory) return false;
+    }
+    return true;
+  });
+
   const handleSearch = async (query: string) => {
     if (!query) return;
 
@@ -44,7 +73,7 @@ function DiscoveryPageContent() {
       }));
 
       const sorted = floristsWithDistance.sort((a, b) => a.distance - b.distance);
-      setSortedFlorists(sorted);
+      setAllFlorists(sorted);
     }
   };
 
@@ -52,10 +81,8 @@ function DiscoveryPageContent() {
     if (initialQuery) {
       handleSearch(initialQuery);
     } else {
-      // If no search, maybe try to use user location or just show default list
-      // For now, we just show the list unsorted relative to user (since we don't know where they are)
-      // or we can treat default center as "user location" for demo purposes?
-      // Let's NOT sort by distance if we don't have a location.
+      // Initialize without distance if no query
+      setAllFlorists(floristsData as Florist[]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [initialQuery]);
@@ -113,26 +140,20 @@ function DiscoveryPageContent() {
                 {userLocation ? "Florists near you" : "All Florists"}
               </h2>
               <span className="text-sm text-muted-foreground">
-                {sortedFlorists.length} results
+                {filteredFlorists.length} results
               </span>
             </div>
 
-            {/* Filters placeholder */}
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-              {["Price: Any", "Rating: 4.5+", "Delivery", "Pickup"].map((filter) => (
-                <Button key={filter} variant="outline" size="sm" className="whitespace-nowrap rounded-full text-xs h-8">
-                  {filter}
-                </Button>
-              ))}
-            </div>
+            {/* Active Filters Component */}
+            <Filters filters={filters} setFilters={setFilters} />
 
             <div className="grid gap-6">
-              {sortedFlorists.map((florist) => (
+              {filteredFlorists.map((florist) => (
                 <FloristCard key={florist.id} florist={florist} />
               ))}
-              {sortedFlorists.length === 0 && (
+              {filteredFlorists.length === 0 && (
                 <div className="text-center py-12 text-muted-foreground">
-                  <p>No florists found in this area.</p>
+                  <p>No florists found matching your criteria.</p>
                 </div>
               )}
             </div>
@@ -144,7 +165,7 @@ function DiscoveryPageContent() {
           absolute inset-0 z-0 md:static md:block md:flex-1
           ${showMapMobile ? "block" : "hidden"}
         `}>
-          <MapWrapper center={mapCenter} zoom={zoom} florists={sortedFlorists} />
+          <MapWrapper center={mapCenter} zoom={zoom} florists={filteredFlorists} />
         </div>
 
       </div>

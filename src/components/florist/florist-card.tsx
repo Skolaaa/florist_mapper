@@ -16,6 +16,8 @@ export type Florist = {
   rating: number;
   price_tier: string;
   image: string;
+  services?: string[];
+  categories?: string[];
   top_sellers: Product[];
   distance?: number;
 };
