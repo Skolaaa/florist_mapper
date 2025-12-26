@@ -9,10 +9,16 @@
     "image": "https://images.unsplash.com/photo-1591073113125-e46713c829ed",
     "services": ["Delivery", "Pickup"],
     "categories": ["Modern", "Bouquets", "Wedding"],
+    "description": "A haven of wild textures and natural forms. We specialize in locally sourced, seasonal blooms that bring the outdoors in. Founded in 2018, Wildwood Botanics has become a staple for those seeking an untamed aesthetic.",
+    "address": "42 Neal St, Covent Garden, London WC2H 9PR",
+    "reviews": [
+        {"user": "Alice M.", "rating": 5, "comment": "Absolutely stunning arrangements. The meadow mix lasted over a week!"},
+        {"user": "Tom H.", "rating": 4, "comment": "Great service, though a bit pricey. Worth it for special occasions."}
+    ],
     "top_sellers": [
-      {"name": "Meadow Mix", "price": 35},
-      {"name": "Eucalyptus Bundle", "price": 15},
-      {"name": "Signature Rose", "price": 45}
+      {"name": "Meadow Mix", "price": 35, "image": ""},
+      {"name": "Eucalyptus Bundle", "price": 15, "image": ""},
+      {"name": "Signature Rose", "price": 45, "image": ""}
     ]
   },
   {
@@ -25,10 +31,16 @@
     "image": "https://images.unsplash.com/photo-1561181286-d3fee7d55364",
     "services": ["Delivery"],
     "categories": ["Luxury", "Events", "Bouquets"],
+    "description": "High-end floral design studio creating bespoke arrangements for luxury events and discerning homes. Known for our opulent style and premium flower selection.",
+    "address": "15 Bow Ln, London EC4M 9AP",
+    "reviews": [
+        {"user": "Sarah J.", "rating": 5, "comment": "The peonies were breathtaking. Best florist in the city."},
+        {"user": "David K.", "rating": 5, "comment": "Ordered for my anniversary and my wife was blown away."}
+    ],
     "top_sellers": [
-      {"name": "Peony Luxe", "price": 65},
-      {"name": "Orchid Pot", "price": 40},
-      {"name": "White Lilies", "price": 50}
+      {"name": "Peony Luxe", "price": 65, "image": ""},
+      {"name": "Orchid Pot", "price": 40, "image": ""},
+      {"name": "White Lilies", "price": 50, "image": ""}
     ]
   },
   {
@@ -41,10 +53,16 @@
     "image": "https://images.unsplash.com/photo-1582794543139-8ac92a944221",
     "services": ["Pickup"],
     "categories": ["Casual", "Plants", "Dried"],
+    "description": "Coffee shop by day, florist by... well, also by day. Grab a latte and a posy on your way to work. We focus on affordable, everyday cheer.",
+    "address": "88 Grays Inn Rd, Holborn, London WC1X 8AA",
+    "reviews": [
+        {"user": "Mike L.", "rating": 4, "comment": "Love the concept. Coffee is great and flowers are cute."},
+        {"user": "Jenny P.", "rating": 5, "comment": "My go-to spot for small gifts."}
+    ],
     "top_sellers": [
-      {"name": "Daily Posy", "price": 25},
-      {"name": "Cactus Trio", "price": 18},
-      {"name": "Dried Wreath", "price": 30}
+      {"name": "Daily Posy", "price": 25, "image": ""},
+      {"name": "Cactus Trio", "price": 18, "image": ""},
+      {"name": "Dried Wreath", "price": 30, "image": ""}
     ]
   },
   {
@@ -57,10 +75,16 @@
     "image": "https://images.unsplash.com/photo-1494336934272-f0efcedfc71a",
     "services": ["Delivery", "Pickup"],
     "categories": ["Classic", "Roses", "Gifts"],
+    "description": "Classic elegance meets modern sensibilities. Rose & Rye is dedicated to the timeless beauty of the rose, sourced from ethical growers.",
+    "address": "22 Elizabeth St, Belgravia, London SW1W 9RB",
+    "reviews": [
+        {"user": "Emily R.", "rating": 5, "comment": "The red roses were velvet perfection."},
+        {"user": "James B.", "rating": 4, "comment": "Delivery was on time and presentation was lovely."}
+    ],
     "top_sellers": [
-      {"name": "Dozen Red", "price": 55},
-      {"name": "Tulip Wrap", "price": 30},
-      {"name": "Gift Box", "price": 45}
+      {"name": "Dozen Red", "price": 55, "image": ""},
+      {"name": "Tulip Wrap", "price": 30, "image": ""},
+      {"name": "Gift Box", "price": 45, "image": ""}
     ]
   },
   {
@@ -73,10 +97,16 @@
     "image": "https://images.unsplash.com/photo-1459156212016-c812468e2115",
     "services": ["Delivery"],
     "categories": ["Plants", "Modern", "Terrariums"],
+    "description": "Transform your space with our curated selection of houseplants and terrariums. We believe every home needs a touch of green.",
+    "address": "120 Shoreditch High St, London E1 6JN",
+    "reviews": [
+        {"user": "Chris T.", "rating": 5, "comment": "My monstera is thriving! Great advice from the staff."},
+        {"user": "Anna W.", "rating": 4, "comment": "Cool selection, but pots are a bit expensive."}
+    ],
     "top_sellers": [
-      {"name": "Monstera", "price": 40},
-      {"name": "Fiddle Leaf", "price": 60},
-      {"name": "Succulent Bowl", "price": 35}
+      {"name": "Monstera", "price": 40, "image": ""},
+      {"name": "Fiddle Leaf", "price": 60, "image": ""},
+      {"name": "Succulent Bowl", "price": 35, "image": ""}
     ]
   },
   {
@@ -89,10 +119,16 @@
     "image": "https://images.unsplash.com/photo-1563241527-3af801d063ce",
     "services": ["Delivery", "Pickup"],
     "categories": ["Luxury", "Wedding", "Events"],
+    "description": "Award-winning floral design for weddings and grand occasions. Grace & Garden brings fairytales to life with flowers.",
+    "address": "5 Kensington Church St, London W8 4LD",
+    "reviews": [
+        {"user": "Sophia L.", "rating": 5, "comment": "They did my wedding and it was magical. Highly recommend!"},
+        {"user": "Oliver G.", "rating": 5, "comment": "Exquisite taste and flawless execution."}
+    ],
     "top_sellers": [
-      {"name": "Grand Arch", "price": 150},
-      {"name": "Bridal Bouquet", "price": 95},
-      {"name": "Table Center", "price": 80}
+      {"name": "Grand Arch", "price": 150, "image": ""},
+      {"name": "Bridal Bouquet", "price": 95, "image": ""},
+      {"name": "Table Center", "price": 80, "image": ""}
     ]
   }
 ]

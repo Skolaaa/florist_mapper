@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Star, MapPin } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,40 +29,41 @@ interface FloristCardProps {
 
 export function FloristCard({ florist }: FloristCardProps) {
   return (
-    <Card className="overflow-hidden border-none shadow-md hover:shadow-lg transition-shadow bg-card">
-      <div className="relative h-48 w-full">
-        <Image
-          src={florist.image}
-          alt={florist.name}
-          fill
-          className="object-cover"
-        />
-        <Badge
-          className="absolute top-3 right-3 bg-white/90 text-foreground hover:bg-white/100"
-          variant="secondary"
-        >
-          {florist.price_tier}
-        </Badge>
-      </div>
-
-      <CardHeader className="p-4 pb-2">
-        <div className="flex justify-between items-start">
-          <h3 className="font-serif text-xl font-semibold text-foreground">{florist.name}</h3>
-          <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
-            <Star className="w-4 h-4 fill-primary text-primary" />
-            <span className="text-sm font-medium">{florist.rating}</span>
-          </div>
+    <Link href={`/florist/${florist.id}`} className="block group">
+      <Card className="overflow-hidden border-none shadow-md group-hover:shadow-xl transition-all duration-300 bg-card h-full">
+        <div className="relative h-48 w-full overflow-hidden">
+          <Image
+            src={florist.image}
+            alt={florist.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <Badge
+            className="absolute top-3 right-3 bg-white/90 text-foreground hover:bg-white/100 backdrop-blur-sm"
+            variant="secondary"
+          >
+            {florist.price_tier}
+          </Badge>
         </div>
-        {florist.distance !== undefined && (
-          <div className="flex items-center text-muted-foreground text-sm mt-1">
-            <MapPin className="w-3 h-3 mr-1" />
-            <span>{florist.distance} miles away</span>
-          </div>
-        )}
-      </CardHeader>
 
-      <CardContent className="p-4 pt-2">
-        <div className="mt-2">
+        <CardHeader className="p-4 pb-2">
+          <div className="flex justify-between items-start">
+            <h3 className="font-serif text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{florist.name}</h3>
+            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-full">
+              <Star className="w-4 h-4 fill-primary text-primary" />
+              <span className="text-sm font-medium">{florist.rating}</span>
+            </div>
+          </div>
+          {florist.distance !== undefined && (
+            <div className="flex items-center text-muted-foreground text-sm mt-1">
+              <MapPin className="w-3 h-3 mr-1" />
+              <span>{florist.distance} miles away</span>
+            </div>
+          )}
+        </CardHeader>
+
+        <CardContent className="p-4 pt-2">
+          <div className="mt-2">
           <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
             Top Sellers
           </p>
@@ -86,7 +88,8 @@ export function FloristCard({ florist }: FloristCardProps) {
             ))}
           </div>
         </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </Link>
   );
 }
